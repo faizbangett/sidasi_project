@@ -17,11 +17,12 @@ export async function resetPassword(
   payload: ResetPasswordPayload,
 ): Promise<AuthSuccess> {
   const normalizedToken = payload.token?.trim() ?? "";
+  const hashedToken = normalizedToken ? hashResetToken(normalizedToken) : "";
   const normalizedNewPassword = payload.newPassword ?? "";
 
   const errors: ValidationErrors = {};
   if (!normalizedToken) {
-    errors.password = "Token reset wajib diisi.";
+    errors.token = "Token reset wajib diisi.";
   }
 
   const passwordError = getPasswordError(normalizedNewPassword);
@@ -35,14 +36,14 @@ export async function resetPassword(
     throw authError(400, "Periksa kembali data yang kamu isi.", errors);
   }
 
-  const tokenData = await findResetToken(hashResetToken(normalizedToken));
+  const tokenData = await findResetToken(hashedToken);
   if (!tokenData || tokenData.expiresAt < Date.now()) {
     throw authError(400, "Token reset tidak valid atau sudah kedaluwarsa.");
   }
 
   const user = await findUserByEmail(tokenData.email);
   if (!user) {
-    throw authError(404, "Akun tidak ditemukan.");
+    throw authError(400, "Token reset tidak valid atau sudah kedaluwarsa.");
   }
 
   await saveUser({
@@ -50,7 +51,7 @@ export async function resetPassword(
     passwordHash: hashPassword(normalizedNewPassword),
   });
 
-  await deleteResetToken(normalizedToken);
+  await deleteResetToken(hashedToken);
 
   return {
     status: 200,
