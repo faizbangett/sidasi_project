@@ -17,6 +17,7 @@ export type ValidationErrors = {
   password?: string;
   confirmPassword?: string;
   newPassword?: string;
+  token?: string;
 };
 
 export type AuthError = {

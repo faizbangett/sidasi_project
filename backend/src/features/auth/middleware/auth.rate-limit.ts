@@ -22,8 +22,8 @@ export const authLoginRateLimit = rateLimit({
 });
 
 export const authForgotPasswordRateLimit = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  limit: 3,
+  windowMs: 60 * 60 * 1000,
+  limit: 5,
   standardHeaders: true,
   legacyHeaders: false,
   message: {
@@ -34,7 +34,7 @@ export const authForgotPasswordRateLimit = rateLimit({
 
 export const authResetPasswordRateLimit = rateLimit({
   windowMs: 15 * 60 * 1000,
-  limit: 10,
+  limit: 5,
   standardHeaders: true,
   legacyHeaders: false,
   message: {

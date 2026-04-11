@@ -11,10 +11,11 @@ export function DashboardPage({ user, onLogout }: DashboardPageProps) {
     <main className="dashboard-page">
       <header className="dashboard-topbar">
         <div>
-          <p className="eyebrow">SIDASI Dashboard</p>
+          <p className="eyebrow">SIDASI Validator Dashboard</p>
           <h1>Selamat datang, {user.name}</h1>
           <p className="muted">
-            Kamu berhasil login dan sesi autentikasi aktif.
+            Sesi aktif. Kamu siap mengakses modul validasi format laporan Tugas
+            Akhir.
           </p>
         </div>
         <button type="button" className="ghost-btn" onClick={onLogout}>
@@ -24,9 +25,10 @@ export function DashboardPage({ user, onLogout }: DashboardPageProps) {
 
       <section className="dashboard-grid">
         <article className="panel">
-          <h2>Status Autentikasi</h2>
+          <h2>Profil Pengguna Sistem</h2>
           <p className="muted">
-            Halaman ini hanya muncul setelah login berhasil.
+            Data berikut digunakan sebagai identitas akses pada aplikasi
+            validasi format dokumen.
           </p>
           <dl className="identity-list">
             <div>
@@ -45,11 +47,11 @@ export function DashboardPage({ user, onLogout }: DashboardPageProps) {
         </article>
 
         <article className="panel panel-accent">
-          <h2>Langkah Lanjut Belajar</h2>
+          <h2>Roadmap Implementasi Proposal</h2>
           <ol>
-            <li>Tambahkan route protected dengan token/JWT.</li>
-            <li>Simpan sesi ke localStorage atau cookie httpOnly.</li>
-            <li>Ambil data user profile dari endpoint backend.</li>
+            <li>Bangun modul upload dan parsing dokumen PDF.</li>
+            <li>Terapkan rule validasi sesuai pedoman KTI POLIJE.</li>
+            <li>Tampilkan hasil error format beserta saran perbaikan.</li>
           </ol>
         </article>
       </section>
