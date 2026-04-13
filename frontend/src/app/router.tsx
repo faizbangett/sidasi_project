@@ -3,12 +3,15 @@ import { AuthPage } from "../features/auth/pages/AuthPage";
 import { meApi } from "../features/auth/services/auth.api";
 import type { AuthSession, AuthUser } from "../features/auth/types/auth.types";
 import { DashboardPage } from "../features/dashboard/pages/DashboardPage";
+import { UploadTAPage } from "../features/uploadTA";
 
 const AUTH_TOKEN_KEY = "sidasi_auth_token";
+type InternalPage = "dashboard" | "upload-ta";
 
 export function AppRouter() {
   const [isBootstrapping, setIsBootstrapping] = useState(true);
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
+  const [activePage, setActivePage] = useState<InternalPage>("dashboard");
 
   useEffect(() => {
     async function bootstrapSession() {
@@ -35,11 +38,13 @@ export function AppRouter() {
   function onLoginSuccess(session: AuthSession) {
     localStorage.setItem(AUTH_TOKEN_KEY, session.token);
     setCurrentUser(session.user);
+    setActivePage("dashboard");
   }
 
   function onLogout() {
     localStorage.removeItem(AUTH_TOKEN_KEY);
     setCurrentUser(null);
+    setActivePage("dashboard");
   }
 
   if (isBootstrapping) {
@@ -47,7 +52,23 @@ export function AppRouter() {
   }
 
   if (currentUser) {
-    return <DashboardPage user={currentUser} onLogout={onLogout} />;
+    if (activePage === "upload-ta") {
+      return (
+        <UploadTAPage
+          user={currentUser}
+          onLogout={onLogout}
+          onNavigateDashboard={() => setActivePage("dashboard")}
+        />
+      );
+    }
+
+    return (
+      <DashboardPage
+        user={currentUser}
+        onLogout={onLogout}
+        onNavigateUpload={() => setActivePage("upload-ta")}
+      />
+    );
   }
 
   return <AuthPage onLoginSuccess={onLoginSuccess} />;

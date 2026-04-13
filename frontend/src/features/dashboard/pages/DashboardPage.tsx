@@ -16,9 +16,14 @@ import "../styles/dashboard-page.css";
 type DashboardPageProps = {
   user: AuthUser;
   onLogout: () => void;
+  onNavigateUpload: () => void;
 };
 
-export function DashboardPage({ user, onLogout }: DashboardPageProps) {
+export function DashboardPage({
+  user,
+  onLogout,
+  onNavigateUpload,
+}: DashboardPageProps) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const firstName = user.name.trim().split(" ")[0] || "Pengguna";
 
@@ -36,6 +41,8 @@ export function DashboardPage({ user, onLogout }: DashboardPageProps) {
           <AppSidebar
             appLabel="SIDASI Validator"
             onLogout={onLogout}
+            activeItem="dashboard"
+            onNavigateUpload={onNavigateUpload}
             isOpen={sidebarOpen}
           />
         }
@@ -43,7 +50,9 @@ export function DashboardPage({ user, onLogout }: DashboardPageProps) {
         <section className="dashboard-main" aria-label="Konten dashboard">
           <DashboardWelcome firstName={firstName} />
           <DashboardSummarySection />
-          <DashboardStartValidationSection />
+          <DashboardStartValidationSection
+            onStartValidation={onNavigateUpload}
+          />
           <DashboardRecentActivitiesSection />
         </section>
       </InternalAreaShell>
