@@ -16,12 +16,14 @@ type UploadTAPageProps = {
   user: AuthUser;
   onLogout: () => void;
   onNavigateDashboard: () => void;
+  onNavigateHistory: () => void;
 };
 
 export function UploadTAPage({
   user,
   onLogout,
   onNavigateDashboard,
+  onNavigateHistory,
 }: UploadTAPageProps) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const uploadFlow = useUploadTAFlow();
@@ -42,6 +44,7 @@ export function UploadTAPage({
             onLogout={onLogout}
             activeItem="upload-ta"
             onNavigateDashboard={onNavigateDashboard}
+            onNavigateHistory={onNavigateHistory}
             isOpen={sidebarOpen}
           />
         }

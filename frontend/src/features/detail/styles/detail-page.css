@@ -1,0 +1,262 @@
+.detail-page {
+  gap: 16px;
+}
+
+.detail-top-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.detail-header-summary {
+  display: grid;
+  gap: 8px;
+}
+
+.detail-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #187b84;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.detail-title {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.42rem);
+  color: #12313a;
+}
+
+.detail-meta {
+  margin: 0;
+  color: #4c6670;
+  line-height: 1.55;
+}
+
+.detail-meta strong {
+  color: #0b6f76;
+}
+
+.detail-score-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #ef4444;
+  margin: 0 8px 0 6px;
+}
+
+.detail-split-view {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0;
+  overflow: hidden;
+}
+
+.detail-split-view--loading {
+  border-top: 1px solid rgba(19, 62, 66, 0.08);
+}
+
+.detail-split-column {
+  padding: 16px;
+  min-height: 360px;
+}
+
+.detail-split-column + .detail-split-column {
+  border-left: 1px solid rgba(19, 62, 66, 0.14);
+}
+
+.detail-pdf-placeholder,
+.detail-state-message,
+.detail-state-panel {
+  width: 100%;
+}
+
+.detail-column-title {
+  margin: 0 0 10px;
+  font-family: "Space Grotesk", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1d5861;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.detail-pdf-preview-box,
+.detail-state-message-box {
+  min-height: 320px;
+  border: 1px dashed rgba(19, 62, 66, 0.22);
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    rgba(245, 248, 250, 0.92),
+    rgba(255, 255, 255, 0.96)
+  );
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 10px;
+  padding: 18px;
+  text-align: center;
+}
+
+.detail-pdf-placeholder-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: rgba(11, 127, 135, 0.1);
+  color: #0b6f76;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-pdf-placeholder-title,
+.detail-state-message-title {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.08rem;
+  color: #12313a;
+  font-weight: 700;
+}
+
+.detail-pdf-placeholder-description,
+.detail-state-message-description {
+  margin: 0;
+  color: #546b73;
+  line-height: 1.55;
+  max-width: 420px;
+}
+
+.detail-state-message-box .dashboard-primary-action {
+  margin-top: 8px;
+}
+
+.detail-state-panel {
+  padding: 0;
+}
+
+.detail-loading-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.detail-loading-note {
+  margin: 0;
+  color: #5c727a;
+}
+
+.detail-state-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.detail-split-view--loading .detail-state-box {
+  min-height: 240px;
+}
+
+.detail-state-box {
+  min-height: 220px;
+  border: 1px dashed rgba(19, 62, 66, 0.22);
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    rgba(240, 245, 247, 0.92),
+    rgba(255, 255, 255, 0.92)
+  );
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 8px;
+  padding: 18px;
+  text-align: center;
+  color: #4e6570;
+}
+
+.detail-state-box p {
+  margin: 0;
+  font-weight: 700;
+  color: #213940;
+}
+
+.detail-state-box span {
+  max-width: 240px;
+  line-height: 1.5;
+}
+
+.detail-spinner {
+  animation: detailSpin 1s linear infinite;
+  color: #0b6f76;
+}
+
+.detail-revision-list {
+  display: grid;
+  gap: 10px;
+}
+
+.detail-revision-item {
+  border: 1px solid rgba(19, 62, 66, 0.14);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #ffffff;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.detail-revision-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.detail-revision-dot.is-high {
+  background: #ef4444;
+}
+
+.detail-revision-dot.is-medium {
+  background: #f59e0b;
+}
+
+.detail-revision-dot.is-low {
+  background: #22c55e;
+}
+
+.detail-revision-title {
+  margin: 0 0 4px;
+  font-weight: 700;
+  color: #12313a;
+}
+
+.detail-revision-message {
+  margin: 0;
+  color: #516771;
+  line-height: 1.5;
+}
+
+@keyframes detailSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 980px) {
+  .detail-split-view,
+  .detail-state-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-split-column + .detail-split-column {
+    border-left: 0;
+    border-top: 1px solid rgba(19, 62, 66, 0.14);
+  }
+}
