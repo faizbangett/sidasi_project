@@ -1,6 +1,8 @@
 import type { Dispatch, FormEvent, SetStateAction } from "react";
-import { FormField } from "../../../../shared/components/FormField";
-import { FormSubmitButton } from "../../../../shared/components/FormSubmitButton";
+import {
+  FormField,
+  FormSubmitButton,
+} from "../../../../shared/components/forms";
 import type { FormErrors, RegisterFormState } from "../../types/auth.types";
 
 type AuthRegisterFormProps = {
