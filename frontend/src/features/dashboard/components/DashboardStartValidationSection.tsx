@@ -1,12 +1,22 @@
 import { DashboardSection } from "../../../shared/components/dashboard";
 
-export function DashboardStartValidationSection() {
+type DashboardStartValidationSectionProps = {
+  onStartValidation?: () => void;
+};
+
+export function DashboardStartValidationSection({
+  onStartValidation,
+}: DashboardStartValidationSectionProps) {
   return (
     <DashboardSection title="MULAI VALIDASI BARU">
       <p className="dashboard-caption">
         🚀 Draft Anda sudah siap? Pastikan format sesuai pedoman.
       </p>
-      <button type="button" className="dashboard-primary-action">
+      <button
+        type="button"
+        className="dashboard-primary-action"
+        onClick={onStartValidation}
+      >
         MULAI VALIDASI SEKARANG →
       </button>
       <p className="dashboard-helper">

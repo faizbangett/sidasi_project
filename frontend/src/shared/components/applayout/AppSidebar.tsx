@@ -10,12 +10,18 @@ import {
 type AppSidebarProps = {
   appLabel: string;
   onLogout: () => void;
+  activeItem?: "dashboard" | "upload-ta";
+  onNavigateDashboard?: () => void;
+  onNavigateUpload?: () => void;
   isOpen?: boolean;
 };
 
 export function AppSidebar({
   appLabel,
   onLogout,
+  activeItem = "dashboard",
+  onNavigateDashboard,
+  onNavigateUpload,
   isOpen = true,
 }: AppSidebarProps) {
   return (
@@ -30,13 +36,21 @@ export function AppSidebar({
         <nav>
           <ul className="dashboard-nav-list">
             <li>
-              <button type="button" className="dashboard-nav-link is-active">
+              <button
+                type="button"
+                className={`dashboard-nav-link${activeItem === "dashboard" ? " is-active" : ""}`}
+                onClick={onNavigateDashboard}
+              >
                 <Gauge size={16} aria-hidden="true" />
                 <span>Dashboard</span>
               </button>
             </li>
             <li>
-              <button type="button" className="dashboard-nav-link">
+              <button
+                type="button"
+                className={`dashboard-nav-link${activeItem === "upload-ta" ? " is-active" : ""}`}
+                onClick={onNavigateUpload}
+              >
                 <Upload size={16} aria-hidden="true" />
                 <span>Upload TA</span>
               </button>
