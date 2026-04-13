@@ -17,12 +17,14 @@ type DashboardPageProps = {
   user: AuthUser;
   onLogout: () => void;
   onNavigateUpload: () => void;
+  onNavigateHistory: () => void;
 };
 
 export function DashboardPage({
   user,
   onLogout,
   onNavigateUpload,
+  onNavigateHistory,
 }: DashboardPageProps) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const firstName = user.name.trim().split(" ")[0] || "Pengguna";
@@ -43,6 +45,7 @@ export function DashboardPage({
             onLogout={onLogout}
             activeItem="dashboard"
             onNavigateUpload={onNavigateUpload}
+            onNavigateHistory={onNavigateHistory}
             isOpen={sidebarOpen}
           />
         }

@@ -10,9 +10,10 @@ import {
 type AppSidebarProps = {
   appLabel: string;
   onLogout: () => void;
-  activeItem?: "dashboard" | "upload-ta";
+  activeItem?: "dashboard" | "upload-ta" | "history";
   onNavigateDashboard?: () => void;
   onNavigateUpload?: () => void;
+  onNavigateHistory?: () => void;
   isOpen?: boolean;
 };
 
@@ -22,6 +23,7 @@ export function AppSidebar({
   activeItem = "dashboard",
   onNavigateDashboard,
   onNavigateUpload,
+  onNavigateHistory,
   isOpen = true,
 }: AppSidebarProps) {
   return (
@@ -56,7 +58,11 @@ export function AppSidebar({
               </button>
             </li>
             <li>
-              <button type="button" className="dashboard-nav-link">
+              <button
+                type="button"
+                className={`dashboard-nav-link${activeItem === "history" ? " is-active" : ""}`}
+                onClick={onNavigateHistory}
+              >
                 <FileClock size={16} aria-hidden="true" />
                 <span>Riwayat Lengkap</span>
               </button>

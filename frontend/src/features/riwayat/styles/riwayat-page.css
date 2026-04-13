@@ -1,0 +1,283 @@
+.riwayat-page {
+  gap: 16px;
+}
+
+.riwayat-hero {
+  display: grid;
+  gap: 8px;
+}
+
+.riwayat-kicker,
+.riwayat-section-title {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #187b84;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.riwayat-title {
+  margin: 0;
+  font-size: clamp(1.15rem, 2vw, 1.46rem);
+  font-family: "Space Grotesk", sans-serif;
+  color: #12313a;
+}
+
+.riwayat-subtitle {
+  margin: 0;
+  color: #48606a;
+  line-height: 1.55;
+}
+
+.riwayat-toolbar {
+  display: grid;
+  gap: 12px;
+}
+
+.riwayat-toolbar-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 12px;
+}
+
+.riwayat-search-field,
+.riwayat-sort-field {
+  display: grid;
+  gap: 8px;
+}
+
+.riwayat-field-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #38545d;
+  font-weight: 700;
+}
+
+.riwayat-search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(19, 62, 66, 0.18);
+  border-radius: 12px;
+  padding: 0 10px;
+  background: #fbfefe;
+}
+
+.riwayat-search-input-wrap input,
+.riwayat-sort-field select {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  color: #163139;
+  padding: 11px 0;
+}
+
+.riwayat-clear-btn {
+  border: 0;
+  background: #dfeff0;
+  color: #0b6f76;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.riwayat-state-panel {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 24px 18px;
+}
+
+.riwayat-state-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: rgba(11, 127, 135, 0.08);
+  color: #0b6f76;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.riwayat-state-spinner {
+  animation: riwayatSpin 1s linear infinite;
+}
+
+.riwayat-state-title {
+  margin: 0;
+  font-size: 1.08rem;
+  color: #12313a;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.riwayat-state-description {
+  margin: 0;
+  max-width: 620px;
+  color: #556b74;
+  line-height: 1.55;
+}
+
+.riwayat-state-action {
+  margin-top: 6px;
+}
+
+.riwayat-table-section {
+  display: grid;
+  gap: 14px;
+}
+
+.riwayat-table-wrap {
+  overflow-x: auto;
+}
+
+.riwayat-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+.riwayat-table thead th {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #547078;
+  border-bottom: 1px solid rgba(19, 62, 66, 0.18);
+}
+
+.riwayat-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(19, 62, 66, 0.08);
+  color: #19343c;
+  vertical-align: middle;
+}
+
+.riwayat-table tbody tr:hover {
+  background: rgba(11, 127, 135, 0.04);
+}
+
+.riwayat-table strong {
+  font-weight: 700;
+}
+
+.riwayat-score-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.riwayat-score-badge.is-green {
+  background: #e0f5ea;
+  color: #14824a;
+}
+
+.riwayat-score-badge.is-yellow {
+  background: #fff1cc;
+  color: #9b6a00;
+}
+
+.riwayat-score-badge.is-orange {
+  background: #ffe1ca;
+  color: #ad5b14;
+}
+
+.riwayat-score-badge.is-red {
+  background: #ffe1e1;
+  color: #b13232;
+}
+
+.riwayat-detail-btn {
+  border: 1px solid rgba(11, 127, 135, 0.24);
+  background: #f7fcfb;
+  color: #0b6f76;
+  font: inherit;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 11px;
+  border-radius: 10px;
+}
+
+.riwayat-table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.riwayat-table-info {
+  margin: 0;
+  color: #4f6972;
+}
+
+.riwayat-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.riwayat-page-btn,
+.riwayat-page-number {
+  border: 1px solid rgba(19, 62, 66, 0.16);
+  background: #ffffff;
+  color: #18343c;
+  font: inherit;
+  border-radius: 10px;
+  padding: 7px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.riwayat-page-number.is-active {
+  background: #0b7f87;
+  color: #f5ffff;
+  border-color: #0b7f87;
+}
+
+.riwayat-page-btn:disabled {
+  opacity: 0.45;
+}
+
+.riwayat-page-numbers {
+  display: flex;
+  gap: 6px;
+}
+
+@keyframes riwayatSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 980px) {
+  .riwayat-toolbar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .riwayat-table-footer {
+    align-items: flex-start;
+  }
+}
